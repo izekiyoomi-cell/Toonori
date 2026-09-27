@@ -6,191 +6,208 @@
 <title>TOONORI ✨</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(160deg,#efe2ff,#fff5fc);
+  color:#34264d;
 }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(160deg, #efe2ff, #fff5fc);
-  color: #34264d;
+button{
+  border:0;
+  cursor:pointer;
+  font:inherit;
 }
 
-.app {
-  max-width: 480px;
-  margin: auto;
-  min-height: 100vh;
-  padding-bottom: 80px;
+.app{
+  max-width:700px;
+  margin:auto;
+  min-height:100vh;
+  padding-bottom:90px;
 }
 
-header {
-  padding: 25px 20px 10px;
+header{
+  padding:25px 20px 10px;
 }
 
-.logo {
-  font-size: 32px;
-  font-weight: 900;
-  color: #7546c9;
+.logo{
+  font-size:36px;
+  font-weight:900;
+  color:#7042c8;
 }
 
-.subtitle {
-  color: #786b89;
-  margin-top: 6px;
+.subtitle{
+  color:#71657f;
+  font-size:17px;
 }
 
-.screen {
-  display: none;
-  padding: 15px 20px;
+.screen{
+  display:none;
+  padding:15px 20px;
 }
 
-.screen.active {
-  display: block;
+.screen.active{
+  display:block;
 }
 
-.card {
-  background: rgba(255,255,255,.85);
-  border-radius: 24px;
-  padding: 20px;
-  margin: 14px 0;
-  box-shadow: 0 8px 25px rgba(100,70,140,.12);
+.hero{
+  background:linear-gradient(135deg,#9b63e8,#d28be4);
+  color:white;
+  padding:28px;
+  border-radius:30px;
+  box-shadow:0 10px 30px #b995d555;
 }
 
-h1 {
-  font-size: 28px;
+.hero h1{
+  font-size:29px;
+  margin-top:0;
 }
 
-h2 {
-  margin-top: 5px;
+.primary{
+  width:100%;
+  padding:17px;
+  margin-top:18px;
+  border-radius:18px;
+  background:#7042c8;
+  color:white;
+  font-weight:bold;
+  font-size:17px;
 }
 
-textarea {
-  width: 100%;
-  min-height: 130px;
-  border: 2px solid #e5d7f7;
-  border-radius: 18px;
-  padding: 15px;
-  font-size: 16px;
-  resize: none;
-  outline: none;
+.card{
+  background:white;
+  border-radius:25px;
+  padding:22px;
+  margin:18px 0;
+  box-shadow:0 8px 25px #7e57a522;
 }
 
-textarea:focus {
-  border-color: #9a6ee8;
+.card h2{
+  margin-top:0;
 }
 
-button {
-  border: 0;
-  border-radius: 18px;
-  padding: 14px 18px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
 }
 
-.primary {
-  width: 100%;
-  background: #7546c9;
-  color: white;
-  margin-top: 12px;
+.option{
+  padding:20px 10px;
+  border:2px solid #eadcf7;
+  border-radius:20px;
+  background:#fff;
+  text-align:center;
+  font-weight:bold;
 }
 
-.secondary {
-  background: #eee4ff;
-  color: #6540a8;
+.option.selected{
+  border-color:#814dd2;
+  background:#f1e8ff;
 }
 
-.hero {
-  background: linear-gradient(135deg, #9c73e8, #d59bea);
-  color: white;
-  border-radius: 30px;
-  padding: 28px 22px;
-  margin-top: 10px;
-  box-shadow: 0 12px 30px rgba(117,70,201,.25);
+.icon{
+  display:block;
+  font-size:35px;
+  margin-bottom:8px;
 }
 
-.hero h1 {
-  margin-top: 0;
+textarea{
+  width:100%;
+  min-height:150px;
+  padding:15px;
+  border:2px solid #eadcf7;
+  border-radius:18px;
+  font:inherit;
+  resize:none;
 }
 
-.option-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+.back{
+  background:white;
+  padding:10px 16px;
+  border-radius:14px;
+  margin-bottom:15px;
 }
 
-.option {
-  background: white;
-  border: 2px solid #eadff7;
-  border-radius: 20px;
-  padding: 18px 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: .2s;
+.next{
+  width:100%;
+  padding:16px;
+  border-radius:18px;
+  background:#7042c8;
+  color:white;
+  font-weight:bold;
+  margin-top:18px;
 }
 
-.option:hover,
-.option.selected {
-  border-color: #8d5bdd;
-  background: #f4edff;
-  transform: translateY(-2px);
+.movie{
+  background:#20152d;
+  color:white;
+  border-radius:25px;
+  padding:30px 20px;
+  text-align:center;
+  min-height:300px;
 }
 
-.icon {
-  font-size: 34px;
-  display: block;
-  margin-bottom: 8px;
+.movie .stars{
+  font-size:45px;
 }
 
-.nav {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(480px,100%);
-  background: white;
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 5px;
-  box-shadow: 0 -5px 20px rgba(60,30,90,.12);
+.movie h2{
+  font-size:28px;
 }
 
-.nav button {
-  background: transparent;
-  color: #766780;
-  padding: 8px;
-  font-size: 13px;
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(700px,100%);
+  background:white;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:10px;
+  box-shadow:0 -5px 25px #0002;
 }
 
-.nav button.active {
-  color: #7546c9;
+.bottom button{
+  background:white;
+  color:#665977;
+  padding:8px 2px;
+  font-size:13px;
 }
 
-.movie {
-  background: linear-gradient(135deg,#c5a4f5,#f4b9df);
-  border-radius: 25px;
-  padding: 35px 20px;
-  text-align: center;
-  color: white;
-  min-height: 230px;
+.bottom span{
+  display:block;
+  font-size:23px;
 }
 
-.big-star {
-  font-size: 70px;
+.story{
+  background:white;
+  border-radius:20px;
+  padding:18px;
+  margin:12px 0;
 }
 
-.progress {
-  height: 10px;
-  background: #eadff7;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 20px;
+.small{
+  color:#776b85;
+  font-size:14px;
 }
 
-.progress div {
-  width: 70%;
-  height: 100%;
-  background: #7546c9;
+.loading{
+  text-align:center;
+  padding:50px 15px;
+}
+
+.spinner{
+  font-size:55px;
+  animation:spin 2s linear infinite;
+}
+
+@keyframes spin{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
 }
 </style>
 </head>
@@ -210,294 +227,446 @@ button {
   <div class="hero">
     <h1>✨ Create something magical</h1>
     <p>Make your own cartoon stories with characters, worlds and adventures.</p>
-    <button class="primary" onclick="showScreen('create')">
+    <button class="primary" onclick="show('story')">
       🎬 Create a Movie
     </button>
   </div>
 
   <div class="card">
     <h2>🌟 What will you create?</h2>
-    <div class="option-grid">
-      <div class="option" onclick="showScreen('create')">
+
+    <div class="grid">
+      <button class="option" onclick="show('story')">
         <span class="icon">🎬</span>
         Movie
-      </div>
+      </button>
 
-      <div class="option" onclick="showScreen('characters')">
+      <button class="option" onclick="show('characters')">
         <span class="icon">🧸</span>
         Character
-      </div>
+      </button>
 
-      <div class="option" onclick="showScreen('styles')">
+      <button class="option" onclick="show('styles')">
         <span class="icon">🎨</span>
         Styles
-      </div>
+      </button>
 
-      <div class="option" onclick="showScreen('stories')">
+      <button class="option" onclick="show('stories')">
         <span class="icon">📚</span>
         My Stories
-      </div>
+      </button>
     </div>
   </div>
 
 </section>
 
-<!-- CREATE -->
-<section id="create" class="screen">
 
-  <h1>🎬 Create a Movie</h1>
+<!-- STORY -->
+<section id="story" class="screen">
+
+  <button class="back" onclick="show('home')">← Home</button>
 
   <div class="card">
-    <h2>📝 What's your story?</h2>
-    <p>Tell Toonori what happens in your mini movie.</p>
+    <h2>💭 What's your story?</h2>
 
-    <textarea id="story"
-      placeholder="Example: A little star meets a friendly bear and they travel to a magical castle..."></textarea>
+    <p>Tell Toonori what your mini movie should be about.</p>
 
-    <button class="primary" onclick="showScreen('characters')">
-      Next → Choose Characters
+    <textarea id="storyText"
+      placeholder="Example: A little bear discovers a magical star..."></textarea>
+
+    <button class="next" onclick="goCharacters()">
+      Continue →
     </button>
   </div>
 
 </section>
+
 
 <!-- CHARACTERS -->
 <section id="characters" class="screen">
 
-  <h1>🧸 Characters</h1>
-  <p>Choose who will be in your story.</p>
+  <button class="back" onclick="show('story')">← Back</button>
 
-  <div class="option-grid">
+  <div class="card">
+    <h2>🧸 Choose your characters</h2>
 
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">🐻</span>
-      Star Bear
+    <div class="grid">
+
+      <button class="option" onclick="select(this,'character')">
+        <span class="icon">🐻</span>
+        Bear
+      </button>
+
+      <button class="option" onclick="select(this,'character')">
+        <span class="icon">🐰</span>
+        Bunny
+      </button>
+
+      <button class="option" onclick="select(this,'character')">
+        <span class="icon">⭐</span>
+        Star
+      </button>
+
+      <button class="option" onclick="select(this,'character')">
+        <span class="icon">🤖</span>
+        Robot
+      </button>
+
     </div>
 
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">⭐</span>
-      Little Star
-    </div>
-
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">🐰</span>
-      Bunny
-    </div>
-
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">🤖</span>
-      Robot
-    </div>
-
+    <button class="next" onclick="show('characterStyle')">
+      Continue →
+    </button>
   </div>
+
+</section>
+
+
+<!-- CHARACTER STYLE -->
+<section id="characterStyle" class="screen">
+
+  <button class="back" onclick="show('characters')">← Back</button>
 
   <div class="card">
     <h2>🎨 Character Style</h2>
 
-    <div class="option-grid">
+    <div class="grid">
 
-      <div class="option" onclick="selectOption(this)">
+      <button class="option" onclick="select(this,'characterStyle')">
         <span class="icon">🧸</span>
         Felt / Plush
-      </div>
+      </button>
 
-      <div class="option" onclick="selectOption(this)">
+      <button class="option" onclick="select(this,'characterStyle')">
         <span class="icon">📄</span>
         Paper Collage
-      </div>
+      </button>
 
-      <div class="option" onclick="selectOption(this)">
-        <span class="icon">✏️</span>
+      <button class="option" onclick="select(this,'characterStyle')">
+        <span class="icon">🖍️</span>
         Doodle
-      </div>
+      </button>
 
-      <div class="option" onclick="selectOption(this)">
+      <button class="option" onclick="select(this,'characterStyle')">
         <span class="icon">🎭</span>
+        Handmade Paper
+      </button>
+
+      <button class="option" onclick="select(this,'characterStyle')">
+        <span class="icon">✨</span>
         3D Cartoon
-      </div>
+      </button>
 
     </div>
 
-    <button class="primary" onclick="showScreen('styles')">
-      Next → Animation Style
+    <button class="next" onclick="show('styles')">
+      Continue →
     </button>
   </div>
 
 </section>
 
-<!-- STYLES -->
+
+<!-- ANIMATION STYLE -->
 <section id="styles" class="screen">
 
-  <h1>🌈 Animation Style</h1>
-  <p>Choose the world of your movie.</p>
+  <button class="back" onclick="show('characterStyle')">← Back</button>
 
-  <div class="option-grid">
+  <div class="card">
+    <h2>🌈 Animation Style</h2>
 
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">🏰</span>
-      Dreamy Fantasy
+    <div class="grid">
+
+      <button class="option" onclick="select(this,'animation')">
+        <span class="icon">🏰</span>
+        Dreamy Fantasy
+      </button>
+
+      <button class="option" onclick="select(this,'animation')">
+        <span class="icon">🧸</span>
+        Felt / Plush
+      </button>
+
+      <button class="option" onclick="select(this,'animation')">
+        <span class="icon">📄</span>
+        Paper Collage
+      </button>
+
+      <button class="option" onclick="select(this,'animation')">
+        <span class="icon">🖍️</span>
+        Doodle
+      </button>
+
+      <button class="option" onclick="select(this,'animation')">
+        <span class="icon">📚</span>
+        Handmade Paper
+      </button>
+
+      <button class="option" onclick="select(this,'animation')">
+        <span class="icon">🎭</span>
+        3D Cartoon
+      </button>
+
     </div>
 
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">🧸</span>
-      Felt / Plush
-    </div>
-
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">📚</span>
-      Paper Collage
-    </div>
-
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">✏️</span>
-      Doodle
-    </div>
-
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">🎨</span>
-      Handmade Paper
-    </div>
-
-    <div class="option" onclick="selectOption(this)">
-      <span class="icon">🌟</span>
-      3D Cartoon
-    </div>
-
+    <button class="next" onclick="show('voice')">
+      Continue →
+    </button>
   </div>
+
+</section>
+
+
+<!-- VOICE -->
+<section id="voice" class="screen">
+
+  <button class="back" onclick="show('styles')">← Back</button>
 
   <div class="card">
     <h2>🎙️ Voice & Music</h2>
 
-    <button class="secondary" onclick="selectOption(this)">
-      🗣️ Friendly Voice
-    </button>
+    <div class="grid">
 
-    <button class="secondary" onclick="selectOption(this)">
-      🎵 Magical Music
-    </button>
+      <button class="option" onclick="select(this,'voice')">
+        <span class="icon">🌸</span>
+        Cute Voice
+      </button>
 
-    <button class="primary" onclick="showScreen('generating')">
-      ✨ Generate My Movie
+      <button class="option" onclick="select(this,'voice')">
+        <span class="icon">🌟</span>
+        Magical Voice
+      </button>
+
+      <button class="option" onclick="select(this,'music')">
+        <span class="icon">🎵</span>
+        Magical Music
+      </button>
+
+      <button class="option" onclick="select(this,'music')">
+        <span class="icon">🎹</span>
+        Adventure Music
+      </button>
+
+    </div>
+
+    <button class="next" onclick="generateMovie()">
+      ✨ Generate Movie
     </button>
   </div>
 
 </section>
+
 
 <!-- GENERATING -->
 <section id="generating" class="screen">
 
-  <div class="card" style="text-align:center">
+  <div class="card loading">
 
-    <div class="big-star">✨</div>
+    <div class="spinner">✨</div>
 
-    <h1>Creating your movie...</h1>
+    <h2>Creating your Toonori movie...</h2>
 
-    <p>Toonori is preparing your magical world! 🌙</p>
-
-    <div class="progress">
-      <div></div>
-    </div>
-
-    <button class="primary" onclick="showScreen('movie')">
-      ▶️ Preview Movie
-    </button>
+    <p id="loadingText">
+      Mixing your story with a little magic! 🌟
+    </p>
 
   </div>
 
 </section>
+
 
 <!-- MOVIE -->
 <section id="movie" class="screen">
 
-  <h1>🎬 Your Toonori Movie</h1>
+  <button class="back" onclick="show('home')">← Home</button>
 
   <div class="movie">
-    <div class="big-star">🌟</div>
-    <h2>Your Magical Adventure</h2>
-    <p>✨ A Toonori mini movie ✨</p>
-    <button class="secondary" onclick="alert('Movie player coming soon! 🎬')">
-      ▶️ Play
+
+    <div class="stars">✨⭐✨</div>
+
+    <h2 id="movieTitle">Your Toonori Movie</h2>
+
+    <p id="movieStory"></p>
+
+    <p>🎬 Your mini movie is ready!</p>
+
+    <button class="primary" onclick="saveStory()">
+      💾 Save Story
     </button>
+
   </div>
 
-  <button class="primary" onclick="showScreen('stories')">
-    💾 Save to My Stories
-  </button>
-
 </section>
+
 
 <!-- STORIES -->
 <section id="stories" class="screen">
 
-  <h1>📚 My Stories</h1>
+  <button class="back" onclick="show('home')">← Home</button>
 
   <div class="card">
-    <h2>🌟 Your Magical Adventure</h2>
-    <p>Dreamy Fantasy • 3D Cartoon</p>
-    <button class="secondary" onclick="showScreen('movie')">
-      ▶️ Watch
-    </button>
-  </div>
 
-  <div class="card">
-    <h2>🌙 Coming soon...</h2>
-    <p>Your next Toonori adventure will appear here.</p>
+    <h2>📚 My Stories</h2>
+
+    <div id="storyList">
+      <p class="small">Your saved Toonori stories will appear here.</p>
+    </div>
+
   </div>
 
 </section>
 
+
+<!-- BOTTOM NAV -->
+<nav class="bottom">
+
+  <button onclick="show('home')">
+    <span>🏠</span>
+    Home
+  </button>
+
+  <button onclick="show('story')">
+    <span>🎬</span>
+    Create
+  </button>
+
+  <button onclick="show('characters')">
+    <span>🧸</span>
+    Characters
+  </button>
+
+  <button onclick="show('stories')">
+    <span>📚</span>
+    Stories
+  </button>
+
+</nav>
+
 </div>
 
-<!-- NAVIGATION -->
-
-<div class="nav">
-
-  <button onclick="showScreen('home')">
-    🏠<br>Home
-  </button>
-
-  <button onclick="showScreen('create')">
-    🎬<br>Create
-  </button>
-
-  <button onclick="showScreen('characters')">
-    🧸<br>Characters
-  </button>
-
-  <button onclick="showScreen('stories')">
-    📚<br>Stories
-  </button>
-
-</div>
 
 <script>
 
-function showScreen(id) {
+let choices = {};
 
-  document.querySelectorAll('.screen').forEach(function(screen) {
-    screen.classList.remove('active');
-  });
+function show(id){
 
-  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.screen')
+    .forEach(screen => screen.classList.remove('active'));
 
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+  document.getElementById(id)
+    .classList.add('active');
+
+  window.scrollTo(0,0);
+
+  if(id === 'stories'){
+    loadStories();
+  }
 }
 
-function selectOption(element) {
+function select(element,type){
 
-  const siblings = element.parentElement.children;
+  const parent = element.parentElement;
 
-  for (let i = 0; i < siblings.length; i++) {
-    siblings[i].classList.remove('selected');
-  }
+  parent.querySelectorAll('.option')
+    .forEach(option => option.classList.remove('selected'));
 
   element.classList.add('selected');
+
+  choices[type] = element.innerText.trim();
+}
+
+function goCharacters(){
+
+  const story = document.getElementById('storyText').value.trim();
+
+  if(!story){
+
+    alert('Tell Toonori your story idea first! ✨');
+
+    return;
+  }
+
+  choices.story = story;
+
+  show('characters');
+}
+
+function generateMovie(){
+
+  show('generating');
+
+  setTimeout(() => {
+
+    document.getElementById('movieStory').innerText =
+      choices.story || 'A magical Toonori adventure!';
+
+    document.getElementById('movieTitle').innerText =
+      '✨ Toonori Adventure';
+
+    show('movie');
+
+  },2500);
+}
+
+function saveStory(){
+
+  const stories =
+    JSON.parse(localStorage.getItem('toonoriStories') || '[]');
+
+  stories.push({
+    story: choices.story || 'A Toonori adventure',
+    character: choices.character || 'Character',
+    style: choices.animation || 'Dreamy Fantasy'
+  });
+
+  localStorage.setItem(
+    'toonoriStories',
+    JSON.stringify(stories)
+  );
+
+  alert('Story saved to My Stories! 💜📚');
+
+  show('stories');
+}
+
+function loadStories(){
+
+  const stories =
+    JSON.parse(localStorage.getItem('toonoriStories') || '[]');
+
+  const list = document.getElementById('storyList');
+
+  if(stories.length === 0){
+
+    list.innerHTML =
+      '<p class="small">Your saved Toonori stories will appear here.</p>';
+
+    return;
+  }
+
+  list.innerHTML = '';
+
+  stories.slice().reverse().forEach((item,index) => {
+
+    const div = document.createElement('div');
+
+    div.className = 'story';
+
+    div.innerHTML = `
+      <h3>🎬 Toonori Story ${stories.length-index}</h3>
+      <p>${item.story}</p>
+      <p class="small">
+        ${item.character} · ${item.style}
+      </p>
+    `;
+
+    list.appendChild(div);
+
+  });
 }
 
 </script>
 
 </body>
-        </html>
+</html>
